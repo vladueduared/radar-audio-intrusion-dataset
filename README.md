@@ -157,9 +157,22 @@ The dataset is intended for research on:
 - edge-oriented alarm systems
 
 ## Citation
+If you use this dataset in your research, please cite:
+
+Vladu, E.; Rostas, L.; Battigelli, A.; Domnici, D.; Neag, M. (2026).
+*Radar-Audio Intrusion Dataset for Privacy-Preserving Indoor Alarm Detection*.
+Zenodo. Version 1.0.
+https://doi.org/10.5281/zenodo.21885389
+
+DOI: 10.5281/zenodo.21885389
 
 A DOI and citation information will be added after the first public dataset release.
 
 ## Authors
 
-Author information will be added in the corresponding archived dataset record and associated publication.
+If you use this dataset in your research, please cite:
+
+Vladu, E.; Rostas, L.; Battigelli, A.; Domnici, D.; Neag, M. (2026).
+*Radar-Audio Intrusion Dataset for Privacy-Preserving Indoor Alarm Detection*.
+Zenodo, Version 1.0.
+https://doi.org/10.5281/zenodo.21885389
