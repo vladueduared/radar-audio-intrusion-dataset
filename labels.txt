@@ -1,0 +1,183 @@
+Dataset Label Definitions
+
+The dataset uses a binary target definition for intrusion-related alarm detection.
+
+Binary classes
+--------------
+
+positive
+    Intrusion-related alarm event. The recording contains unauthorized room entry
+    or an intrusion-related sequence associated with access to the protected room.
+
+negative
+    Non-intrusion or nuisance event. The recording does not contain unauthorized
+    room entry and is intended to represent challenging non-alarm conditions.
+
+Primary actions
+---------------
+
+door_entry
+    Entry into the protected room through the door.
+
+window_entry
+    Entry into the protected room through the window.
+
+room_entry
+    Entry into the monitored room involving an interior/rear-side access path,
+    or a sequence involving more than one access path.
+
+access_attempt
+    Interaction with the door, handle, key, or lock without successful entry.
+
+external_alarm
+    External alarm or siren-like acoustic event without intrusion.
+
+ambient_noise
+    Environmental or background noise without intrusion.
+
+thrown_object
+    An object intentionally thrown within or near the monitored region.
+
+falling_object
+    An object intentionally released and allowed to fall.
+
+Access point
+------------
+
+door
+    Entry or interaction occurs at the door.
+
+window
+    Entry occurs through the window.
+
+rear_side
+    Entry originates from the rear side of the sensor relative to its main
+    monitored region.
+
+rear_side, door
+    The recording contains entry activity involving both the rear-side region
+    and the door.
+
+none
+    No intrusion access point is involved.
+
+Motion style
+------------
+
+normal
+    Normal walking or movement speed.
+
+slow
+    Deliberately slow movement.
+
+fast
+    Rapid movement or running.
+
+stealth
+    Discreet, crouched, quiet, or otherwise stealth-like movement.
+
+slow_fast
+    The recording contains both slow and fast entry movements.
+
+none
+    No intruder movement is present.
+
+Speech
+------
+
+yes
+    Human speech is present as part of the intrusion-related recording.
+
+no
+    No intrusion-related speech is present.
+
+Additional disturbances
+-----------------------
+
+none
+    No additional disturbance was intentionally included.
+
+door_knock
+    Knocking on the door.
+
+door_impact
+    Strong impact or hitting of the door.
+
+repeated_entry
+    The same intruder performs more than one room-entry event within the recording.
+
+ambient_noise
+    General environmental background noise.
+
+construction_noise
+    Construction-related background noise.
+
+air_conditioner_noise
+    Air-conditioner background noise.
+
+rain_noise
+    Rain-related environmental noise.
+
+external_siren
+    External siren-like sound occurring during the recording.
+
+siren
+    Siren-like sound used as the primary negative acoustic event.
+
+falling_object
+    An object is allowed to fall during an otherwise positive recording.
+
+object_fall
+    Object-fall event used as the primary negative event.
+
+thrown_object
+    An intentionally thrown object occurring as an additional event.
+
+object_impact
+    Acoustic/mechanical impact produced by an object.
+
+cardboard_object
+    Falling-object event involving a cardboard object.
+
+metal_object
+    Falling-object event involving a metallic object.
+
+forced_entry
+    Forced entry through the monitored access point.
+
+Annotation files
+----------------
+
+Each recording folder contains:
+
+Radar-Data.data
+    Radar macro-detection data acquired at 10 Hz.
+
+Microphone-Data.wav
+    Stereo audio acquired at 16 kHz.
+
+labelf.label
+    Event annotation file.
+
+The label file contains the following fields:
+
+Time(Seconds)
+    Start time of the annotated interval.
+
+Length(Seconds)
+    Duration of the annotated interval.
+
+Label(string)
+    Event label assigned to the interval.
+
+Confidence(double)
+    Annotation confidence value.
+
+Comment(string)
+    Optional annotation comment.
+
+The recording-level class describes the overall scenario. Individual nuisance
+events may therefore occur inside a positive recording. For example, a positive
+intrusion recording may also contain a falling object, door impact, external
+noise, or another disturbance. Such additional events are described separately
+in sessions.csv and do not replace the recording-level intrusion label.
